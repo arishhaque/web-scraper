@@ -1,2 +1,2 @@
 # web-scraper
-A simple python program to extract news information from websites based on xml-etree.
+A simple python program based on xml-etree to extract news information from websites and store in csv.
