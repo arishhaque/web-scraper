@@ -38,10 +38,8 @@ def parseXML(xmlfile):
             # special checking for namespace object content:media
             if child.tag == '{http://search.yahoo.com/mrss/}content':
             	news['media'] = child.attrib['url']
-            	# print ('arish')
-
+            
             else:
-            	# print ('arish')
             	try:
             		news[child.tag] = child.text
             	except:
