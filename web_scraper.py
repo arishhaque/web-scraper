@@ -7,7 +7,7 @@ def loadRSS():
     # url of rss feed
     url = 'http://www.hindustantimes.com/rss/topnews/rssfeed.xml'
  
-    # creating HTTP response object from given url
+    # creating HTTP response object from the given url
     resp = requests.get(url)
  
     # saving the xml file
@@ -34,8 +34,6 @@ def parseXML(xmlfile):
  
         # iterate child elements of item
         for child in item:
- 
-            # special checking for namespace object content:media
             if child.tag == '{http://search.yahoo.com/mrss/}content':
             	news['media'] = child.attrib['url']
             
@@ -58,16 +56,16 @@ def savetoCSV(newsitems, filename):
     # specifying the fields for csv file
     fields = ['guid', 'title', 'pubDate', 'description', 'link', 'media']
  
-    # writing to csv file
+    # write to csv file
     with open(filename, 'w') as csvfile:
  
         # creating a csv dict writer object
         writer = csv.DictWriter(csvfile, fieldnames = fields)
  
-        # writing headers (field names)
+        # write headers (field names)
         writer.writeheader()
  
-        # writing data rows
+        # write data rows
         writer.writerows(newsitems)
  
      
@@ -83,6 +81,4 @@ def main():
      
      
 if __name__ == "__main__":
- 
-    # calling main function
     main()
