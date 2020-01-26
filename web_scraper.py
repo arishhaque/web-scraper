@@ -43,7 +43,7 @@ def parseXML(xmlfile):
             	except:
             		pass
         print (str(news['title']))
-        # append news dictionary to news items list
+        # append to news items list
         newsitems.append(news)
         # print (str(newsitems[0]['title']))
      
