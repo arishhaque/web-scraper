@@ -41,7 +41,7 @@ def parseXML(xmlfile):
             	try:
             		news[child.tag] = child.text
             	except:
-            		pass
+            		print ('site unreachable')
         print (str(news['title']))
         # append to news items list
         newsitems.append(news)
